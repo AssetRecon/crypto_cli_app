@@ -1,3 +1,4 @@
+#all functionality and logic found in cli.rb in the CryptoCliApp::CLI class
 #!/usr/bin/env ruby
 require './lib/crypto_cli_app/'
 

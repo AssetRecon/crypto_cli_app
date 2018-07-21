@@ -1,4 +1,4 @@
-#Our CLI controller
+#CLI controller
 class CryptoCliApp::CLI
 
 def call
