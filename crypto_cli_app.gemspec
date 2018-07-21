@@ -6,8 +6,8 @@ require "crypto_cli_app/version"
 Gem::Specification.new do |spec|
   spec.name          = "crypto_cli_app"
   spec.version       = CryptoCliApp::VERSION
-  spec.authors       = ["'Edsel Caprice'"]
-  spec.email         = ["'caprice@mail.usf.edu'"]
+  spec.authors       = ["'AssetRecon'"]
+  spec.email         = ["''"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
