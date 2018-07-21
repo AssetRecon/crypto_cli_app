@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "crypto_cli_app"
   spec.version       = CryptoCliApp::VERSION
   spec.authors       = ["'AssetRecon'"]
-  spec.email         = ["''"]
+  spec.email         =
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
