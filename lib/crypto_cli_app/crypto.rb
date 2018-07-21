@@ -1,6 +1,6 @@
 class CryptoCliApp::Crypto
 
-  def top_crypto #will new to scrap this data
+  def top_crypto #will new to scrape this data from CoinMarketCap.com
     puts <<-DOC
     1	Bitcoin
     2	Ethereum
@@ -30,6 +30,19 @@ class CryptoCliApp::Crypto
     DOC
   end
 
+  def crypto_exchange
+    #displays average price
+    puts <<-DOC
+    1. Binance
+    2. Bittrex
+    DOC
+
+  end
+
+
+  def crypto_exchange_price
+puts "This coin is currently trading at $1.25 USD on this exchange"
+  end
 
 
 

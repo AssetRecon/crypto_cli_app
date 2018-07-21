@@ -47,10 +47,8 @@ class CryptoCliApp::CLI
  def detail(input)
    #returns 2nd layer of detail for input that is passed in
    puts "This coin is currently being traded the most on the following exchanges:"
-   puts <<-DOC
-   1. Binance
-   2. Bittrex
-   DOC
+   CryptoCliApp::Crypto.new.crypto_exchange
+
   puts "Enter 1-2 to see the current trading price. Enter back to return to previous menu or exit to leave"
    new_input = gets.strip.downcase
    case new_input
@@ -68,7 +66,7 @@ class CryptoCliApp::CLI
 
  def detail_two(input)
    #displays crypto's price. calls method that displays 2nd level of data by using input passed through.
-   puts "This coin is currently trading at $1.25 USD"
+   CryptoCliApp::Crypto.new.crypto_exchange_price
    puts "Please enter back to return to the main menu or exit to leave the program."
 
 new_input = nil
