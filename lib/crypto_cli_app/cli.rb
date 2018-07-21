@@ -51,7 +51,7 @@ class CryptoCliApp::CLI
  def valid_input?(input)
    #checks that input is between 1 - 25
    if (input.to_i > 0 && input.to_i < 26)
-      puts "calls method that shows more detail"
+        detail(input)
     elsif input == "exit"
       goodbye 
     else
@@ -61,6 +61,33 @@ class CryptoCliApp::CLI
 
  def goodbye
    puts "Check back later for updated prices. Bye."
+ end
+
+ def detail(input)
+   #returns 2nd layer of detail for input that is passed in
+   puts "This coin is currently being traded the most on the following exchanges:"
+   puts <<-DOC
+   1. Binance
+   2. Bittrex
+   DOC
+  puts "Enter 1-2 to see the current trading price. Enter back to return to previous menu or exit to leave"
+   new_input = gets.strip.downcase 
+   case new_input
+  when "exit"
+    goodbye
+  when back
+    call
+  when "1"
+    detail_two(new_input)
+  when "2"
+    detail_two(new_input)
+  end
+     
+ end
+
+ def detail_two(input)
+   #displays crypto's price
+   
  end
 
  
