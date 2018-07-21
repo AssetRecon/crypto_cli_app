@@ -9,33 +9,7 @@ class CryptoCliApp::CLI
  def list_crypto
    #list the top 25 Cryptocurrencies by market cap
    puts "Today's Top 25 Cryptocurrencies By Market Capitalization Are:"
-   puts <<-DOC
-   1	Bitcoin
-   2	Ethereum
-   3	XRP
-   4	Bitcoin Cash
-   5	EOS
-   6	Stellar
-   7	Litecoin
-   8	Cardano
-   9	IOTA
-   10	Tether
-   11	TRON
-   12	NEO
-   13	Monero
-   14	Dash
-   15	Ethereum Classic
-   16	NEM
-   17	Tezos
-   18	Binance Coin
-   19	VeChain
-   20	OmiseGO
-   21	Zcash
-   22	Qtum
-   23	Bitcoin Diamond
-   24	0x
-   25	Decred
-   DOC
+   CryptoCliApp::Crypto.new.top_crypto
  end
 
  def menu
@@ -64,7 +38,7 @@ class CryptoCliApp::CLI
    menu
   end
  end
- 
+
 
  def goodbye
    puts "Check back later for updated prices. Bye."
@@ -78,7 +52,7 @@ class CryptoCliApp::CLI
    2. Bittrex
    DOC
   puts "Enter 1-2 to see the current trading price. Enter back to return to previous menu or exit to leave"
-   new_input = gets.strip.downcase 
+   new_input = gets.strip.downcase
    case new_input
   when "exit"
     goodbye
@@ -89,14 +63,14 @@ class CryptoCliApp::CLI
   when "2"
     detail_two(new_input)
   end
-     
+
  end
 
  def detail_two(input)
    #displays crypto's price. calls method that displays 2nd level of data by using input passed through.
    puts "This coin is currently trading at $1.25 USD"
    puts "Please enter back to return to the main menu or exit to leave the program."
-   
+
 new_input = nil
    while new_input != "back" && new_input != "exit"
      new_input = gets.strip.downcase
@@ -113,6 +87,6 @@ new_input = nil
     call
   end
  end
- 
+
 
 end
