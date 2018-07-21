@@ -2,7 +2,7 @@
 class CryptoCliApp::CLI
 
 def call
-puts "Current Crpotocurrency prices:"
+puts "Current Cryptocurrency prices:"
 end
 
 
