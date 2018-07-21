@@ -1,5 +1,5 @@
 # Specifications for the CLI Assessment
-d
+
 Specs:
 - [x] Have a CLI for interfacing with the application
 - [ ] Pull data from an external source
