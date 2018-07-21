@@ -6,3 +6,4 @@
 	c. user can drill down on particular exchange to get current trading price and more details (users can drill down on the pokemon's location)
 2. Start with project structure - google.
 	bundle gem "gem_name" will create project structure
+	3. something now
