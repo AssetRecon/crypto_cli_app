@@ -93,8 +93,8 @@ class CryptoCliApp::CLI
  end
 
  def detail_two(input)
-   #displays crypto's price
-   puts "calls method that displays 2nd level of data by using input passed through."
+   #displays crypto's price. calls method that displays 2nd level of data by using input passed through.
+   puts "This coin is currently trading at $1.25 USD"
    puts "Please enter back to return to the main menu or exit to leave the program."
    
 new_input = nil
