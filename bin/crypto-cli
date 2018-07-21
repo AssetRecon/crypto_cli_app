@@ -3,4 +3,3 @@
 require './lib/crypto_cli_app/'
 
 CryptoCliApp::CLI.new.call
-puts "hello world"
