@@ -1,1 +1,4 @@
 #!/usr/bin/env ruby
+require './lib/crypto_cli_app/'
+
+CryptoCliApp::CLI.new.call
