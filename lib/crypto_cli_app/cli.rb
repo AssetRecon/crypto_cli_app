@@ -94,9 +94,15 @@ class CryptoCliApp::CLI
 
  def detail_two(input)
    #displays crypto's price
-   puts "2nd level of data. Please enter back or exit"
-   new_input = gets.strip.downcase
-   back_or_exit(new_input)
+   puts "calls method that displays 2nd level of data by using input passed through."
+   puts "Please enter back to return to the main menu or exit to leave the program."
+   
+new_input = nil
+   while new_input != "back" && new_input != "exit"
+     new_input = gets.strip.downcase
+      puts "please enter back or exit"
+    end
+   back_or_exit(new_input) if new_input == "back" || new_input == "exit"
  end
 
  def back_or_exit(input)
