@@ -2,14 +2,14 @@
 class CryptoCliApp::CLI
 
  def call
-   puts "Today's top 25 Current Cryptocurrencies"
    list_crypto
+   menu
  end
 
  def list_crypto
    #list the top 25 Cryptocurrencies by market cap
+   puts "Today's Top 25 Cryptocurrencies By Market Capitalization Are:"
    puts <<-DOC
-
    1	Bitcoin
    2	Ethereum
    3	XRP
@@ -24,7 +24,7 @@ class CryptoCliApp::CLI
    12	NEO
    13	Monero
    14	Dash
-   15	Ethereum Classic	
+   15	Ethereum Classic
    16	NEM
    17	Tezos
    18	Binance Coin
@@ -35,13 +35,25 @@ class CryptoCliApp::CLI
    23	Bitcoin Diamond
    24	0x
    25	Decred
-
    DOC
  end
 
  def menu
-   #ask user to select a currency to dril down
+   #ask user to select a currency to dril down then
    puts "Which currency do you want more info on? Enter 1 - 25"
+   input = gets.strip
+   valid_input?(input)
  end
+
+ def valid_input?(input)
+   #checks that input is between 1 - 25
+   input.to_i > 0 && input.to_i < 26 ? puts "calls method that shows more detail" : puts "Please enter a valid number 1 - 25."
+ end
+
+ def goodbye
+   puts "Check back later for updated prices"
+ end
+
+ 
 
 end
