@@ -61,7 +61,6 @@ class CryptoCliApp::CLI
   when "2"
     detail_two(new_input)
   end
-
  end
 
  def detail_two(input)

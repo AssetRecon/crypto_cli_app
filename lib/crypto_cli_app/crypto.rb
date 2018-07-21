@@ -1,4 +1,5 @@
 class CryptoCliApp::Crypto
+  attr_accessor :price, :pair, :volume, :exchange, :market_cap, :change_percentage, :coin
 
   def top_crypto #will new to scrape this data from CoinMarketCap.com
     puts <<-DOC
@@ -31,7 +32,7 @@ class CryptoCliApp::Crypto
   end
 
   def crypto_exchange
-    #displays average price
+    #displays average price, market cap, 24h volume, change%. Also offers user to drill down on top two exchanges to view most popular trading pairs
     puts <<-DOC
     1. Binance
     2. Bittrex
@@ -41,7 +42,8 @@ class CryptoCliApp::Crypto
 
 
   def crypto_exchange_price
-puts "This coin is currently trading at $1.25 USD on this exchange"
+    #displays trading price, volume, and trading pair for the selected exchange
+    puts "This coin is currently trading at $1.25 USD on this exchange"
   end
 
 
