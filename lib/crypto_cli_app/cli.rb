@@ -40,22 +40,27 @@ class CryptoCliApp::CLI
 
  def menu
    #ask user to select a currency to dril down then
-   puts "Which currency do you want more info on? Enter 1 - 25. Type Exit to leave."
-   input = gets.strip
-   valid_input?(input)
+   input = nil
+   while input != "exit"
+     puts "Which currency do you want more info on? Enter: 1 - 25. Type exit to leave."
+     input = gets.strip.downcase
+     valid_input?(input)
+   end
  end
 
  def valid_input?(input)
    #checks that input is between 1 - 25
    if (input.to_i > 0 && input.to_i < 26)
       puts "calls method that shows more detail"
-    else 
-      puts "Please enter a valid number 1 - 25."
+    elsif input == "exit"
+      goodbye 
+    else
+      puts "Please enter a valid number: 1 - 25."
     end
  end
 
  def goodbye
-   puts "Check back later for updated prices"
+   puts "Check back later for updated prices. Bye."
  end
 
  
