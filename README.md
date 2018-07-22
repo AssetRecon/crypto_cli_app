@@ -1,8 +1,6 @@
 # CryptoCliApp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crypto_cli_app`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This command line application scrapes data from CoinMarketCap.com for the top 25 cryptocurrencies by market capitalization.
 
 ## Installation
 
@@ -22,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You will be greeted and presented with a listing of the current top 25 cryptocurrencies per CoinMarketCap.com. When prompted,
+enter the number corresponding to the coin you would like to get more information about.
+
+Next, you will be presented with additional information, as well as the option to enter a corresponding number again to receive even more information. You may exit
+at any time by entering "exit" or return to the main menu by entering "back".
 
 ## Development
 
