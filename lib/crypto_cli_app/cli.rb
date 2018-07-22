@@ -50,27 +50,15 @@ class CryptoCliApp::CLI
 
   puts "Enter 1 or 2 to see the current trading prices on these exchanges. Enter back to return to previous menu or exit to leave"
    new_input = gets.strip.downcase
-#   case new_input
-#  when "exit"
-#    goodbye
-#  when "back"
-#    call
-#  when "1"
-#    detail_two(new_input)
-#  when "2"
-#    detail_two(new_input)
-#  end
 
-if new_input == "back" || new_input == "exit"
-    back_or_exit(new_input)
-  elsif new_input == "1" || new_input == "2"
+    while new_input != "1" && new_input != "2" && new_input != "back" && new_input != "exit"
+      puts "please enter 1, 2, back, or exit"
+       new_input = gets.strip.downcase
+    end
+    if new_input == "back" || new_input == "exit"
+      back_or_exit(new_input)
+    elsif new_input == "1" || new_input == "2"
     detail_two(new_input)
-  else
-    puts "please enter 1, 2, back, or exit"
-    while new_input != "back" && new_input != "exit" && new_input != "1" && new_input != "2"
-      new_input = gets.strip.downcase
-       puts "please enter 1, 2, back, or exit"
-     end
    end
 
  end
