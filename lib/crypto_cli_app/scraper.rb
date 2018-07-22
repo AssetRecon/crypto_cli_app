@@ -1,4 +1,4 @@
-require 'open-uri'
+#require 'open-uri'
 require 'pry'
 require 'nokogiri'
 
@@ -7,14 +7,15 @@ class CryptoCliApp::Scraper
   def self.scrape_top_25(index_url)
     array = []
     doc =  Nokogiri::HTML(open(index_url))
+    doc.css("tbody tr#id-bitcoin.odd")
 
-    array << {coin: ,
-              coin_url: ,
-              price: ,
-              volume: ,
-              market_cap: ,
-              change_percentage:
-              }
+  #  array << {coin: ,
+  #            coin_url: ,
+  #            price: ,
+  #            volume: ,
+  #            market_cap: ,
+  #            change_percentage:
+  #            }
   end
 
   def scrape_coin_details(coin_url)
@@ -29,4 +30,4 @@ class CryptoCliApp::Scraper
 
 end
 
-CryptoCliApp::Scraper.scrape_top_25(https://coinmarketcap.com/)
+#CryptoCliApp::Scraper.scrape_top_25("https://coinmarketcap.com/")
