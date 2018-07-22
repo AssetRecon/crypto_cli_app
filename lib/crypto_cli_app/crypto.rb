@@ -1,3 +1,4 @@
+
 class CryptoCliApp::Crypto
   attr_accessor :price, :pair, :volume, :exchange, :market_cap, :change_percentage, :coin, :coin_url
 

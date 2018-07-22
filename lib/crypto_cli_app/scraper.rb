@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'pry'
 require 'nokogiri'
-class Scraper
+class CryptoCliApp::Scraper
 
   def self.scrape_top_25(index_url)
     array = []
@@ -35,5 +35,5 @@ class Scraper
 
 end
 
-attribute_array = Scraper.scrape_top_25("https://coinmarketcap.com/")
-Scraper.create_crypto_from_array(attribute_array)
+attribute_array = CryptoCliApp::Scraper.scrape_top_25("https://coinmarketcap.com/")
+CryptoCliApp::Scraper.create_crypto_from_array(attribute_array)
