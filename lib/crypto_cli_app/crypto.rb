@@ -22,9 +22,9 @@ class CryptoCliApp::Crypto
   def crypto_exchange(input)
     #displays average price, market cap, 24h volume, change%. Also offers user to drill down on top two exchanges to view most popular trading pairs
     puts "#{@@all[input.to_i-1].coin} is currently being traded for an average price of #{@@all[input.to_i-1].price}"
-    puts "#{@@all[input.to_i-1].market_cap}"
-    puts "#{@@all[input.to_i-1].volume}"
-    puts "#{@@all[input.to_i-1].change_percentage}"
+    puts "Current Market Capitalization: #{@@all[input.to_i-1].market_cap}"
+    puts "24 Hour Trading Volume: #{@@all[input.to_i-1].volume}"
+    puts "24 Hour Change Percentage: #{@@all[input.to_i-1].change_percentage}"
   #  puts <<-DOC
   #  1. Binance
   #  2. Bittrex
