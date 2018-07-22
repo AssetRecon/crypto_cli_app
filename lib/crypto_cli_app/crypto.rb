@@ -1,6 +1,6 @@
 
 class CryptoCliApp::Crypto
-  attr_accessor :price, :pair, :volume, :exchange, :market_cap, :change_percentage, :coin, :coin_url
+  attr_accessor :price, :pair, :volume, :exchange_1, :exchange_2, :market_cap, :change_percentage, :coin, :coin_url, :selection
 
   @@all = []
   def initialize(attribute_hash = nil)
@@ -21,21 +21,22 @@ class CryptoCliApp::Crypto
 
   def crypto_exchange(input)
     #displays average price, market cap, 24h volume, change%. Also offers user to drill down on top two exchanges to view most popular trading pairs
+    @selection = @@all[input.to_i-1]
     puts "#{@@all[input.to_i-1].coin} is currently being traded for an average price of #{@@all[input.to_i-1].price}"
     puts "Current Market Capitalization: #{@@all[input.to_i-1].market_cap}"
     puts "24 Hour Trading Volume: #{@@all[input.to_i-1].volume}"
     puts "24 Hour Change Percentage: #{@@all[input.to_i-1].change_percentage}"
-  #  puts <<-DOC
-  #  1. Binance
-  #  2. Bittrex
-  #  DOC
-
+    puts "#{@@all[input.to_i-1].coin} is heavily traded on:"
+    puts "1. #{@@all[input.to_i-1].exchange_1}"
+    puts "2. #{@@all[input.to_i-1].exchange_2}"
   end
 
 
-  def crypto_exchange_price
+  def crypto_exchange_price(input)
     #displays trading price, volume, and trading pair for the selected exchange
     puts "This coin is currently trading at $1.25 USD on this exchange"
+    @selection.exchange_1_price
+    @selection.exchange_2_price
   end
 
 

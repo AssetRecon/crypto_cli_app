@@ -48,7 +48,7 @@ class CryptoCliApp::CLI
    #returns 2nd layer of detail for input that is passed in
    CryptoCliApp::Crypto.new.crypto_exchange(input)
 
-  puts "Enter 1-2 to see the current trading price. Enter back to return to previous menu or exit to leave"
+  puts "Enter 1 or 2 to see the current trading prices on these exchanges. Enter back to return to previous menu or exit to leave"
    new_input = gets.strip.downcase
    case new_input
   when "exit"
@@ -64,7 +64,7 @@ class CryptoCliApp::CLI
 
  def detail_two(input)
    #displays crypto's price. calls method that displays 2nd level of data by using input passed through.
-   CryptoCliApp::Crypto.new.crypto_exchange_price
+   CryptoCliApp::Crypto.new.crypto_exchange_price(input)
    puts "Please enter back to return to the main menu or exit to leave the program."
 
 new_input = nil
