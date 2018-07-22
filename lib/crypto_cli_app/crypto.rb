@@ -29,16 +29,20 @@ class CryptoCliApp::Crypto
     puts "2. #{@@all[input.to_i-1].exchange_2}"
   end
 
+  def self.all
+    @@all
+  end
+
   def crypto_exchange_price(input)
     #displays trading price, volume, and trading pair for the selected exchange
-    @@selection.exchange_1 = Scraper.new(@@selection.coin_url)[0]
-    @@selection.exchange_2 = Scraper.new(@@selection.coin_url)[2]
-    @@selection.exchange_1_price = Scraper.new(@@selection.coin_url)[1]
-    @@selection.exchange_2_price = Scraper.new(@@selection.coin_url)[3]
+    @@all[@@selection.to_i-1].exchange_1 = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[0]
+    @@all[@@selection.to_i-1].exchange_2 = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[2]
+    @@all[@@selection.to_i-1].exchange_1_price = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[1]
+    @@all[@@selection.to_i-1].exchange_2_price = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[3]
     if input == "1"
       puts "On #{@@all[@@selection.to_i-1].exchange_1}, #{@@all[@@selection.to_i-1].coin} is being traded at #{@@all[@@selection.to_i-1].exchange_1_price}"
     elsif input == "2"
-      puts "On #{@@all[@@selection.to_i-1].exchange_2}, #{@@all[@@selection.to_i-2].coin} is being traded at #{@@all[@@selection.to_i-2].exchange_1_price}"
+      puts "On #{@@all[@@selection.to_i-1].exchange_2}, #{@@all[@@selection.to_i-2].coin} is being traded at #{@@all[@@selection.to_i-2].exchange_2_price}"
     end
   end
 

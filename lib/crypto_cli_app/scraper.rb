@@ -26,9 +26,8 @@ class CryptoCliApp::Scraper
     doc.css("div.table-responsive table#markets-table tbody tr")[0..1].each do |exchange|
      array << exchange.css("a.link-secondary").text
      array << exchange.css("span.price").text
-     array
   end
-
+array
   end
 
   def self.create_crypto_from_array(array)
