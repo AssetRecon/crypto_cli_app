@@ -16,11 +16,15 @@ class Scraper
                 }
     end
   #binding.pry
-  puts array
+  array
   end
 
   def scrape_coin_details(coin_url)
 
+  end
+
+  def self.create_crypto_from_array(array)
+    CryptoCliApp::Crypto.create_from_collection(array)
   end
 
 
@@ -31,4 +35,5 @@ class Scraper
 
 end
 
-Scraper.scrape_top_25("https://coinmarketcap.com/")
+attribute_array = Scraper.scrape_top_25("https://coinmarketcap.com/")
+Scraper.create_crypto_from_array(attribute_array)
