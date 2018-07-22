@@ -1,7 +1,4 @@
 #acts as enironment file
-#gem 'pry'
-#gem 'nokogiri', '1.6.6.2'
-#gem 'open-uri'
 require 'open-uri'
 require 'pry'
 require 'nokogiri'
