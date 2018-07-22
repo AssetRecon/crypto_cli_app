@@ -12,8 +12,6 @@ class CryptoCliApp::Crypto
     coin_array.each {|attribute_hash| CryptoCliApp::Crypto.new(attribute_hash)}
   end
 
-
-
   def top_crypto #will new to scrape this data from CoinMarketCap.com
     i = 0
     @@all[0..24].each {|crypto| puts "#{i += 1}. #{crypto.coin}"}
@@ -31,14 +29,16 @@ class CryptoCliApp::Crypto
     puts "2. #{@@all[input.to_i-1].exchange_2}"
   end
 
-
   def crypto_exchange_price(input)
     #displays trading price, volume, and trading pair for the selected exchange
-    puts "This coin is currently trading at $1.25 USD on this exchange"
+    @@selection.exchange_1 = Scraper.new(@@selection.coin_url)[0]
+    @@selection.exchange_2 = Scraper.new(@@selection.coin_url)[2]
+    @@selection.exchange_1_price = Scraper.new(@@selection.coin_url)[1]
+    @@selection.exchange_2_price = Scraper.new(@@selection.coin_url)[3]
     if input == "1"
       puts "On #{@@all[@@selection.to_i-1].exchange_1}, #{@@all[@@selection.to_i-1].coin} is being traded at #{@@all[@@selection.to_i-1].exchange_1_price}"
     elsif input == "2"
-      @@selection.exchange_2
+      puts "On #{@@all[@@selection.to_i-1].exchange_2}, #{@@all[@@selection.to_i-2].coin} is being traded at #{@@all[@@selection.to_i-2].exchange_1_price}"
     end
   end
 

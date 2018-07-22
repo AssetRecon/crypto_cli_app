@@ -11,8 +11,8 @@ class CryptoCliApp::Scraper
                 coin_url: coin.css("td.no-wrap a.currency-name-container").attribute("href").value ,
                 price: coin.css("td.no-wrap a.price").text,
                 volume: coin.css("td.no-wrap a.volume").text,
-                market_cap: coin.css("td.no-wrap.market-cap").text ,
-                change_percentage: coin.css("td.no-wrap.percent-change").text
+                market_cap: coin.css("td.no-wrap.market-cap").text,
+                change_percentage: coin.css("td.no-wrap.percent-change").text,
                 }
     end
   #binding.pry
@@ -20,6 +20,14 @@ class CryptoCliApp::Scraper
   end
 
   def scrape_coin_details(coin_url)
+    array = []
+    url ="https://coinmarketcap.com" + coin_url + "#markets"
+    doc =  Nokogiri::HTML(open(url))
+    doc.css("div.table-responsive table#markets-table tbody tr")[0..1].each do |exchange|
+     array << exchange.css("a.link-secondary").text
+     array << exchange.css("span.price").text
+     array
+  end
 
   end
 
@@ -37,3 +45,4 @@ end
 
 attribute_array = CryptoCliApp::Scraper.scrape_top_25("https://coinmarketcap.com/")
 CryptoCliApp::Scraper.create_crypto_from_array(attribute_array)
+#Scraper.new.scrape_coin_details("/currencies/bitcoin/")
