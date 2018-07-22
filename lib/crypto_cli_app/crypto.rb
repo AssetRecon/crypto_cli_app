@@ -2,8 +2,8 @@
 class CryptoCliApp::Crypto
   attr_accessor :price, :pair, :volume, :exchange, :market_cap, :change_percentage, :coin, :coin_url
 
-  def initialize(attribute_hash)
-   attribute_hash.each {|key, value| self.send(("#{key}="), value)}
+  def initialize(attribute_hash = nil)
+   attribute_hash.each {|key, value| self.send(("#{key}="), value)} if attribute_hash != nil
   end
 
   def self.create_from_collection(coin_array)
