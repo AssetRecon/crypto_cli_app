@@ -13,11 +13,9 @@ class Scraper
                 volume: coin.css("td.no-wrap a.volume").text,
                 market_cap: coin.css("td.no-wrap.market-cap").text ,
                 change_percentage: coin.css("td.no-wrap.percent-change").text
-            }
-      end
-
-
-    #binding.pry
+                }
+    end
+  #binding.pry
   puts array
   end
 
