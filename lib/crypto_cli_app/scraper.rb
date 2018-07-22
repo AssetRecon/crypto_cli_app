@@ -33,15 +33,7 @@ array
   def self.create_crypto_from_array(array)
     CryptoCliApp::Crypto.create_from_collection(array)
   end
-
-
-
-
-
-
-
 end
 
 attribute_array = CryptoCliApp::Scraper.scrape_top_25("https://coinmarketcap.com/")
 CryptoCliApp::Scraper.create_crypto_from_array(attribute_array)
-#Scraper.new.scrape_coin_details("/currencies/bitcoin/")
