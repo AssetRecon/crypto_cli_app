@@ -46,8 +46,7 @@ class CryptoCliApp::CLI
 
  def detail(input)
    #returns 2nd layer of detail for input that is passed in
-   puts "This coin is currently being traded the most on the following exchanges:"
-   CryptoCliApp::Crypto.new.crypto_exchange
+   CryptoCliApp::Crypto.new.crypto_exchange(input)
 
   puts "Enter 1-2 to see the current trading price. Enter back to return to previous menu or exit to leave"
    new_input = gets.strip.downcase

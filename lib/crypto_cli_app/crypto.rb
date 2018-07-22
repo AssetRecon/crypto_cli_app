@@ -19,12 +19,16 @@ class CryptoCliApp::Crypto
     @@all[0..24].each {|crypto| puts "#{i += 1}. #{crypto.coin}"}
   end
 
-  def crypto_exchange
+  def crypto_exchange(input)
     #displays average price, market cap, 24h volume, change%. Also offers user to drill down on top two exchanges to view most popular trading pairs
-    puts <<-DOC
-    1. Binance
-    2. Bittrex
-    DOC
+    puts "#{@@all[input.to_i-1].coin} is currently being traded for an average price of #{@@all[input.to_i-1].price}"
+    puts "#{@@all[input.to_i-1].market_cap}"
+    puts "#{@@all[input.to_i-1].volume}"
+    puts "#{@@all[input.to_i-1].change_percentage}"
+  #  puts <<-DOC
+  #  1. Binance
+  #  2. Bittrex
+  #  DOC
 
   end
 
