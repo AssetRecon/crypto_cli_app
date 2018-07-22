@@ -39,7 +39,7 @@ class CryptoCliApp::Crypto
     if input == "1"
       puts "On #{@@all[@@selection.to_i-1].exchange_1}, #{@@all[@@selection.to_i-1].coin} is being traded at #{@@all[@@selection.to_i-1].exchange_1_price}"
     elsif input == "2"
-      puts "On #{@@all[@@selection.to_i-1].exchange_2}, #{@@all[@@selection.to_i-2].coin} is being traded at #{@@all[@@selection.to_i-2].exchange_2_price}"
+      puts "On #{@@all[@@selection.to_i-1].exchange_2}, #{@@all[@@selection.to_i-1].coin} is being traded at #{@@all[@@selection.to_i-1].exchange_2_price}"
     end
   end
 

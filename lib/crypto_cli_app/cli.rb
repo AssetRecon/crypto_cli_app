@@ -60,7 +60,6 @@ class CryptoCliApp::CLI
     elsif new_input == "1" || new_input == "2"
     detail_two(new_input)
    end
-
  end
 
  def detail_two(input)
