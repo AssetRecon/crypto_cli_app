@@ -1,5 +1,15 @@
 class CryptoCliApp::Crypto
-  attr_accessor :price, :pair, :volume, :exchange, :market_cap, :change_percentage, :coin
+  attr_accessor :price, :pair, :volume, :exchange, :market_cap, :change_percentage, :coin, :coin_url
+
+def initialize(attribute_hash)
+  attribute_hash.each {|key, value| self.send(("#{key}="), value)}
+end
+
+def self.create_from_collection(coin_array)
+  coin_array.each {|attribute_hash| CryptoCliApp::Crypto.new(attribute_hash)}
+end
+
+
 
   def top_crypto #will new to scrape this data from CoinMarketCap.com
     puts <<-DOC
