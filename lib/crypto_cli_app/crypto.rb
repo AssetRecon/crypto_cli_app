@@ -12,41 +12,11 @@ class CryptoCliApp::Crypto
     coin_array.each {|attribute_hash| CryptoCliApp::Crypto.new(attribute_hash)}
   end
 
-  def top_crypto #will new to scrape this data from CoinMarketCap.com
-    i = 0
-    @@all[0..24].each {|crypto| puts "#{i += 1}. #{crypto.coin}"}
-  end
-
-  def crypto_exchange(input)
-    #displays average price, market cap, 24h volume, change%. Also offers user to drill down on top two exchanges to view most popular trading prices
-    @@selection = input
-    additional_attributes
-    puts "#{@@all[input.to_i-1].coin} is currently being traded for an average price of #{@@all[input.to_i-1].price}"
-    puts "Current Market Capitalization: #{@@all[input.to_i-1].market_cap}"
-    puts "24 Hour Trading Volume: #{@@all[input.to_i-1].volume}"
-    puts "24 Hour Change Percentage: #{@@all[input.to_i-1].change_percentage}"
-    puts "#{@@all[input.to_i-1].coin} is heavily traded on:"
-    puts "1. #{@@all[input.to_i-1].exchange_1}"
-    puts "2. #{@@all[input.to_i-1].exchange_2}"
-  end
-
   def self.all
     @@all
   end
 
-  def crypto_exchange_price(input)
-    #displays prices for most popular exchanges
-    if input == "1"
-      puts "On #{@@all[@@selection.to_i-1].exchange_1}, #{@@all[@@selection.to_i-1].coin} is being traded at #{@@all[@@selection.to_i-1].exchange_1_price}"
-    elsif input == "2"
-      puts "On #{@@all[@@selection.to_i-1].exchange_2}, #{@@all[@@selection.to_i-1].coin} is being traded at #{@@all[@@selection.to_i-1].exchange_2_price}"
-    end
-  end
 
-  def additional_attributes
-    @@all[@@selection.to_i-1].exchange_1 = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[0]
-    @@all[@@selection.to_i-1].exchange_2 = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[2]
-    @@all[@@selection.to_i-1].exchange_1_price = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[1]
-    @@all[@@selection.to_i-1].exchange_2_price = CryptoCliApp::Scraper.new.scrape_coin_details(@@all[@@selection.to_i-1].coin_url)[3]
-  end
+
+
 end

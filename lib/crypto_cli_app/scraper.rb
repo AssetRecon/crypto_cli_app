@@ -1,6 +1,3 @@
-require 'open-uri'
-require 'pry'
-require 'nokogiri'
 class CryptoCliApp::Scraper
 
   def self.scrape_top_25(index_url)
@@ -19,7 +16,7 @@ class CryptoCliApp::Scraper
   array
   end
 
-  def scrape_coin_details(coin_url)
+  def self.scrape_coin_details(coin_url)
     array = []
     url ="https://coinmarketcap.com" + coin_url + "#markets"
     doc =  Nokogiri::HTML(open(url))
@@ -34,6 +31,3 @@ array
     CryptoCliApp::Crypto.create_from_collection(array)
   end
 end
-
-attribute_array = CryptoCliApp::Scraper.scrape_top_25("https://coinmarketcap.com/")
-CryptoCliApp::Scraper.create_crypto_from_array(attribute_array)
